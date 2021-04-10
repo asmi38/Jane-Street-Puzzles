@@ -11,14 +11,14 @@ def round_two_prob(x, a, b):
 
 def round_three_prob(x, a, b, c, d):
     xwinA = a / (x + a) * round_two_prob(a, c, d) * round_one_prob(a, b)
-    xwinB = b / (x + a) * round_two_prob(b, c, d) * round_one_prob(b, a)
+    xwinB = b / (x + b) * round_two_prob(b, c, d) * round_one_prob(b, a)
     xwinC = c / (x + c) * round_two_prob(c, a, b) * round_one_prob(c, d)
     xwinD = d / (x + d) * round_two_prob(d, a, b) * round_one_prob(d, c)
     return xwinA + xwinB + xwinC + xwinD
 
 def round_four_prob(x, a, b, c, d, e, f, g, h):
     xwinA = a / (x + a) * round_three_prob(a, e, f, g, h) * round_two_prob(a, c, d) * round_one_prob(a, b)
-    xwinB = b / (x + a) * round_three_prob(b, e, f, g, h) * round_two_prob(b, c, d) * round_one_prob(b, a)
+    xwinB = b / (x + b) * round_three_prob(b, e, f, g, h) * round_two_prob(b, c, d) * round_one_prob(b, a)
     xwinC = c / (x + c) * round_three_prob(c, e, f, g, h) * round_two_prob(c, a, b) * round_one_prob(c, d)
     xwinD = d / (x + d) * round_three_prob(d, e, f, g, h) * round_two_prob(d, a, b) * round_one_prob(d, c)
     xwinE = e / (x + e) * round_three_prob(e, a, b, c, d) * round_two_prob(e, g, h) * round_one_prob(e, f)
